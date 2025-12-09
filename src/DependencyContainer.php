@@ -178,7 +178,7 @@ class DependencyContainer extends Field
      * @param mixed $resource
      * @param null  $attribute
      */
-    public function resolveForDisplay($resource, $attribute = null): void
+    public function resolveForDisplay($resource, ?string $attribute = null): void
     {
         foreach ($this->meta['fields'] as $field) {
             $field->resolveForDisplay($resource);
@@ -247,7 +247,7 @@ class DependencyContainer extends Field
      * @param string $attribute
      * @return array|mixed
      */
-    public function resolve($resource, $attribute = null): void
+    public function resolve($resource, ?string $attribute = null): void
     {
         foreach ($this->meta['fields'] as $field) {
             $field->resolve($resource, $attribute);
@@ -264,7 +264,7 @@ class DependencyContainer extends Field
      * @param             $attribute
      * @param null        $requestAttribute
      */
-    public function fillInto(NovaRequest $request, $model, $attribute, $requestAttribute = null)
+    public function fillInto(NovaRequest $request, object $model, string $attribute, ?string $requestAttribute = null)
     {
         $callbacks = [];
 
